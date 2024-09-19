@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cursor-color: white;
+            --text-color:#fff;
+            --bg-color: transparent;
+        }
+
+        body {
+            font-family: 'Dancing Script', cursive;
+            background: url('lo2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 0;
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ffe4e1;
+        }
+
+        h2 {
+            display: inline-block;
+            border-right: 1px solid var(--cursor-color);
+            font-size: 2rem;
+            animation:
+                blinking 1s steps(1, end) infinite,
+                typing 4s steps(20, end);
+            overflow: hidden;
+            white-space: nowrap;
+            color: #ffe4e1;
+        }
+
+        @keyframes blinking {
+            0% { border-color: transparent }
+            50% { border-color: var(--cursor-color); }
+            100% { border-color: transparent }
+        }
+
+        @keyframes typing {
+            0% { width: 0 }
+            100% { width: 100% }
+        }
+
+        .container {
+            padding: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .photo-container {
+            position: relative;
+            padding: 20px;
+            background-color: var(--bg-color); 
+            border-radius: 10px;
+            animation: slideUp 2s ease-out;
+            margin-bottom: 20px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .text-container {
+            padding: 20px;
+            font-size: 1.4rem;
+            color: #9f0571;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .fade-out {
+            animation: fadeOut 1s forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s forwards;
+        }
+
+        .rec {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .photo-container, .text-container {
+                padding: 10px;
+            }
+
+            video {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="container">
+        <header class="heading">
+            <h1>🎂🎈Wishing you Happy Birthday🥳</h1>
+            <h2>To my favourite person💫💝</h2>  
+        </header>
+    </section>
+
+    <section class="rec">
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section class="photo-container">
+        <img src="lo3.jpg" alt="photo1">
+    </section>
+
+    <section class="text-container">
+        <p>💗💞You are charming, talented, and witty and remind me a lot of myself.💌🫀</p>
+        <p>🌟♥I will always love you 😍</p>
+    </section>
+
+    <section class="photo-container">
+        <img src="lo5.jpg" alt="photo2">
+    </section>
+
+    <section class="text-container">
+        <p>🥳🎂 Happy birthday to the most caring and best-looking girl in the world! 🤩😍</p>
+        <p>🥳🎉Wishing you a happy birthday baby!🎂🎉 I hope you have an amazing day my Birthday girl! 💓 💗</p>
+    </section>
+
+    <section class="photo-container">
+        <img src="lo.jpg" alt="photo3">
+    </section>
+
+    <section class="text-container">
+        <p>I'm so lucky to have you in my life.🥰🌸</p>
+        <p>🎉Happy Birthday to the most special person in my 🧬 💕</p>
+        <p>💖🤍You are proof that a perfect girl exists in the world. Happy birthday, sweet girl! 🥳 🎉</p>
+        <p>💓♥I hope this birthday is the best one ever✨💌</p>
+    </section>
+
+    <script>
+        // Fade out after 5 seconds
+        setTimeout(function() {
+            const elements = document.querySelectorAll('.photo-container, .text-container');
+            elements.forEach(element => {
+                element.classList.add('fade-out');
+            });
+        }, 5000); // Trigger fade out after 5 seconds
+
+        // Fade back in after 10 seconds (5 seconds after fade out)
+        setTimeout(function() {
+            const elements = document.querySelectorAll('.photo-container, .text-container');
+            elements.forEach(element => {
+                element.classList.remove('fade-out');
+                element.classList.add('fade-in');
+            });
+        }, 10000); // Trigger fade in after 10 seconds
+    </script>
+
+</body>
+</html>
+
+
+
